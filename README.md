@@ -30,7 +30,7 @@ I'm going to assume you are using a common *USB serial adapter*.
 
 But here we run into our first complication; the *USB serial adapter* you're using is *also a male DTE*
 connector.  This means we need to fix a couple issues;
-* The physical connectors don't fit as both are pins.
+* The physical connectors don't fit as both are male pins.
 * Pin 3 is Transmit on both.
 * Pin 2 is Receive on both. 
 
