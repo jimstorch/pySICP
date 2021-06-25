@@ -81,7 +81,7 @@ So while most of the protocol versions worked on 6+ byte packets, mine wanted 5;
 
 | Byte  | Field               | Description |
 | ----  | -----               | ----------- |
-|  0    | Packet Length       | Packet Size.  This is the length of the entire packet, including this byte  |
+|  0    | Packet Length       | Packet Size.  This is the length of the entire packet, including this byte and the checksum  |
 |  1    | Monitor ID          | This should be the number from step 3 above. |
 |  2    | Command             | Give as hex codes in the docs 
 |  *3+* | Possible arguments  | Optional depending on the command | 
@@ -91,7 +91,7 @@ For newer displays, there will be an additional **Group** field after the **Moni
 
 | Byte  | Field               | Description |
 | ----  | -----               | ----------- |
-|  0    | Packet Length       | Packet Size.  This is the length of the entire packet, including this byte  |
+|  0    | Packet Length       | Packet Size.  This is the length of the entire packet, including this byte and the checksum  |
 |  1    | Monitor ID          | This should be the number from step 3 above. |
 |  2    | Group ID            | I'm guessing this is for controlling part of a display matrix, i.e. giant TV wall |
 |  3    | Command             | Give as hex codes in the docs 
