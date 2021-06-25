@@ -28,7 +28,10 @@ the DTE's *transmit* connects to the DCE's *receive* and the vice versa.
 
 I'm going to assume you are using a common *USB serial adapter*.
 
-![USB Serial Adapter](usb_serial_adapter.jpg|width=256px)
+    ![USB Serial Adapter](usb_serial_adapter.jpg|width=256px)
+
+<img src="https://raw.githubusercontent.com/jimstorch/pySICP/main/f2f_null_modem.jpg" width=256px>
+
 
 But here we run into our first complication; the *USB serial adapter* you're using is *also a male DTE*
 connector.  This means we need to fix a couple issues;
