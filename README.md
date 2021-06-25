@@ -85,7 +85,7 @@ So while most of the protocol versions worked on 6+ byte packets, mine wanted 5;
 |  1    | Monitor ID          | This should be the number from step 3 above. |
 |  2    | Command             | Give as hex codes in the docs 
 |  *3+* | Possible arguments  | Optional depending on the command | 
-| Final | Checksum            | This is each byte in the packed [EOR'd with previous](https://en.wikipedia.org/wiki/Longitudinal_redundancy_check), except this one of course.|
+| Final | Checksum            | Sum of *Exclusive OR*'ing all preceding bytes in the packet |
 
 For newer displays, there will be an additional **Group** field after the **Monitor ID**.
 
@@ -96,7 +96,7 @@ For newer displays, there will be an additional **Group** field after the **Moni
 |  2    | Group ID            | I'm guessing this is for controlling part of a display matrix, i.e. giant TV wall |
 |  3    | Command             | Give as hex codes in the docs 
 |  *4+* | Possible arguments  | Optional depending on the command | 
-| Final | Checksum            | This is each byte in the packed [EOR'd with previous](https://en.wikipedia.org/wiki/Longitudinal_redundancy_check), except this one of course.|
+| Final | Checksum            | Sum of *Exclusive OR*'ing all preceding bytes in the packet |
 
 ## Requirements
 [pySerial](https://github.com/pyserial/pyserial).  I'm using Python 3 and installed mine with;
