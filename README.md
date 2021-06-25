@@ -20,8 +20,8 @@ so everything can be controlled by the same serial connection.
 
 We only need three wires; *transmit* (TX), *receive* (RX), and *ground* (GND).  This is a male 
 connector which typically (but not always) indicated **Data Terminal Equipment** (DTE) as 
-opposed to something like a dial-up modem which is **Data Carrier Equipment** (DCE).  
-Note: there are conflicting definitions for what DTE/DCE stand for but they are all pretty close.
+opposed to something like a dial-up modem which is **Data Carrier Equipment** (DCE). There
+are conflicting definitions for what DTE/DCE stand for but they are all pretty close.
 
 The important thing to understand is that when you wire a DTE to a DCE using a 1-for-1 pintout, 
 the DTE's *transmit* connects to the DCE's *receive* and the vice versa.
