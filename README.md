@@ -102,7 +102,7 @@ For newer displays, there will be an additional **Group** field after the **Moni
 [pySerial](https://github.com/pyserial/pyserial).  I'm using Python 3 and installed mine with;
 
 ```sh
-pip3 install pyserial
+$ pip3 install pyserial
 ```
 
 I coded this using Python 3 and used the new f-string formatting introduced in Python 3.6 (which is so darn
