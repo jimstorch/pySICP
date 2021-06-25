@@ -59,7 +59,7 @@ where I could connect to the port and just type commands. Yeah no.
 ### Finding the SICP version
 This is how I did it, your display may vary.  It's possible the versions for each model are documented somewhere...
 1. Connected the display to a network with DCHP at least temporarily.
-2. Use the remote to open *Menu*, *Configuration 1*, *Network Settings* and noted the IP address.
+2. Use the remote to open *Menu*, *Configuration 1*, *Network Settings* and note the IP address.
 3. While you're there, got to *Advanced Option*, and get the *Monitor ID* as you may need it. Probably **1**.
 4. Open a web browser and go to http://[Step 2 IP Address]/html
 5. Log in as *admin* with the password *000000*
