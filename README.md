@@ -28,7 +28,7 @@ the DTE's *transmit* connects to the DCE's *receive* and the vice versa.
 
 I'm going to assume you are using a common *USB serial adapter*.
 
-![USB Serial Adapter](usb_serial_adapter.jpg?raw=true)
+![USB Serial Adapter](usb_serial_adapter.jpg?raw=true|width=256)
 
 But here we run into our first complication; the *USB serial adapter* you're using is *also a male DTE*
 connector.  This means we need to fix a couple issues;
@@ -36,7 +36,7 @@ connector.  This means we need to fix a couple issues;
 * Pin 3 is Transmit on both.
 * Pin 2 is Receive on both. 
 
-![Female to Female Null Modem](f2f_null_modem.jpg?raw=true =200px)
+![Female to Female Null Modem](f2f_null_modem.jpg?raw=true|with=256)
 You need a combination *gender adapter* and [Null Modem](https://en.wikipedia.org/wiki/Null_modem).
 You can buy these on Amazon as tiny wedges or you can get two female DB9 connectors and
 wire your own like so;
