@@ -35,7 +35,7 @@ connector.  This means we need to fix a couple issues;
 * Pin 2 is Receive on both. 
 
 You need a combination *gender adapter* and [Null Modem](https://en.wikipedia.org/wiki/Null_modem).
-You can buy these on Amazon in as tiny gold wedges or you can get two female DB9 connectors and
+You can buy these on Amazon as tiny gold wedges or you can get two female DB9 connectors and
 wire your own like so;
 * Pin 5 to Pin 5
 * Pin 3 to Pin 2
