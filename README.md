@@ -55,6 +55,7 @@ where I could connect to the port and just type commands. Yeah no.
 * SICP is a *binary* protocol.
 * Commands are sent as packets with *length* and *checksum* bytes.
 * There are multiple, incompatible versions.  This bit me.
+I'm including PDFs of all the versions I could find.
 
 ### Finding the SICP version
 This is how I did it, your display may vary.  It's possible the versions for each model are documented somewhere...
