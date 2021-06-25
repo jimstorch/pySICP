@@ -27,6 +27,7 @@ The important thing to understand is that when you wire a DTE to a DCE using a 1
 the DTE's *transmit* connects to the DCE's *receive* and the vice versa.
 
 I'm going to assume you are using a common *USB serial adapter*.
+
 <img src="https://github.com/jimstorch/pySICP/blob/main/usb_serial_adapter.jpg" width=256p>
 
 But here we run into our first complication; the *USB serial adapter* you're using is *also a male DTE*
@@ -36,6 +37,7 @@ connector.  This means we need to fix a couple issues;
 * Pin 2 is Receive on both. 
 
 <img src="https://raw.githubusercontent.com/jimstorch/pySICP/main/f2f_null_modem.jpg" width=256px>
+
 You need a combination *gender adapter* and [Null Modem](https://en.wikipedia.org/wiki/Null_modem).
 You can buy these on Amazon as tiny wedges or you can get two female DB9 connectors and
 wire your own like so;
