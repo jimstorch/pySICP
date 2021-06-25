@@ -3,6 +3,9 @@ Example of using Python to send **Serial Interface Communications Protocol** (SI
 to Philips Digital Signage.  The newer versions have the backcronymn **Serial/Ethernet Interface
 Communications Protocol**.
 
+This is not a full-featured library but rather a couple of scripts to turn the display on and
+off but should give anyone familar with Python a helpful start to controlling their signage.
+
 ## Background
 I use a Raspberry Pi as a network status montitor connected to a Philips BDL4771V 47" Display.
 Rather than hunt for the remote, I wanted it to turn on and off automatically with the work
@@ -51,12 +54,50 @@ Oh boy.  I was expecting something like the old [AT modem controls](https://en.w
 where I could connect to the port and just type commands. Yeah no.
 * SICP is a *binary* protocol.
 * Commands are sent as packets with *length* and *checksum* bytes.
-* There are multiple, incompatible versions.
+* There are multiple, incompatible versions.  This bit me.
+
+### Finding the SICP version
+This is how I did it, your display may vary.  It's possible the versions for each model are documented somewhere...
+1. Connected the display to a network with DCHP at least temporarily.
+2. Use the remote to open *Menu*, *Configuration 1*, *Network Settings* and noted the IP address.
+3. While you're there, got to *Advanced Option*, and get the *Monitor ID* as you may need it. Probably **1**.
+4. Open a web browser and go to http://[Step 2 IP Address]/html
+5. Log in as *admin* with the password *000000*
+6. The first tab was *Power Settings* and the first box was *SICP version*.  Mine was 1.7.
+
+### Talking to the Display
+This thing did not want to give me anything to indicate I had a connection. I tried cold starts hoping it would
+send a boot message to the port like a like of gear -- nope.  I sent packets based on a PDF for SICP version 1.99
+I found on the Internet but nothing.
+
+My set reported itself as SICP version 1.7.  I kept hunting and eventually found a PDF for version 1.6 and finally
+got a reply;
+```python
+b'\x05\x01\x00\x06\x02'
+```
+Five bytes?  According to the docs, this was *"Command is well executed."**
+
+So while most of the protocol versions worked on 6+ byte packets, mine wanted 5;
+
+| Byte  | Field               | Description |
+| ----  | -----               | ----------- |
+|  0    | Packet Length       | Packet Size.  This is the length of the entire packet, including this byte  |
+|  1    | Monitor ID          | This should be the number from step 3 above. |
+|  2    | Command             | Give as hex codes in the docs 
+|  *3+* | Possible arguments  | Optional depending on the command | 
+| Final | Checksum            | This is each byte in the packed [EOR'd with previous](https://en.wikipedia.org/wiki/Longitudinal_redundancy_check), except this one of course.|
+
+For newer displays, there will be an additional **Group** field after the **Monitor ID**.
 
 
-
-To make matters worse, it's a protocol with a lot of changes.  
-SICP is a binary protocol that includes a [checksum]
+## Requirements
+[pySerial](https://github.com/pyserial/pyserial).  I'm using Python 3 and installed mine with;
+``sh
+pip3 install pyserial
+``
+I coded this using Python 3 and used the new f-string formatting introduced in Python 3.6 (which is so darn
+brilliant) for a couple lines.  Sadly, version of Raspian on my Raspberry Pi was still on 3.5.3 so I had to edit
+them.
 
 
 
