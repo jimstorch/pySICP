@@ -100,9 +100,11 @@ For newer displays, there will be an additional **Group** field after the **Moni
 
 ## Requirements
 [pySerial](https://github.com/pyserial/pyserial).  I'm using Python 3 and installed mine with;
+
 ``sh
 pip3 install pyserial
 ``
+
 I coded this using Python 3 and used the new f-string formatting introduced in Python 3.6 (which is so darn
 brilliant) for a couple lines.  Sadly, version of Raspian on my Raspberry Pi was still on 3.5.3 so I had to edit
 them.
