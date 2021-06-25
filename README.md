@@ -118,4 +118,4 @@ Don't forget to define *GROUP* as whatever group you need, probably 0x00.  The p
 ```python
 if resp == b'\x06\x01\x00\x00\x06\x01':
 ```
-These are my best guesses and I don't have another set to test.
+These are my best guesses as I don't have another set to test.
