@@ -108,3 +108,14 @@ $ pip3 install pyserial
 I coded this using Python 3 and used the new f-string formatting introduced in Python 3.6 (which is so darn
 brilliant) for a couple lines.  Sadly, version of Raspian on my Raspberry Pi was still on 3.5.3 so I had to edit
 them.
+
+## Modifying the Code
+For newer sets you will probably need to add the **Group**. So line 45 in **on.py** and **off.py** becomes;
+```python
+cmd = [MONITOR, GROUP, SET_POWER_STATE, PWR_OFF]
+```
+Don't forget to define *GROUP* as whatever group you need, probably 0x00.  The proper response in line 51 will probably change to;
+```python
+if resp == b'\x06\x01\x00\x00\x06\x01':
+```
+These are my best guesses and I don't have another set to test.
