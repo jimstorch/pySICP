@@ -85,7 +85,7 @@ So while most of the protocol versions worked on 6+ byte packets, mine wanted 5;
 | ----  | -----               | ----------- |
 |  0    | Packet Length       | Packet Size.  This is the length of the entire packet, including this byte and the checksum  |
 |  1    | Monitor ID          | This should be the number from step 3 above. |
-|  2    | Command             | Give as hex codes in the docs 
+|  2    | Command             | Given as hex codes in the docs 
 |  *3+* | Possible arguments  | Optional depending on the command | 
 | Final | Checksum            | Sum of *Exclusive OR*'ing all preceding bytes in the packet |
 
@@ -96,7 +96,7 @@ For newer displays, there will be an additional **Group** field after the **Moni
 |  0    | Packet Length       | Packet Size.  This is the length of the entire packet, including this byte and the checksum  |
 |  1    | Monitor ID          | This should be the number from step 3 above. |
 | **2** | **Group ID**        | **I'm guessing this is for controlling part of a display matrix, i.e. giant TV wall** |
-|  3    | Command             | Give as hex codes in the docs 
+|  3    | Command             | Given as hex codes in the docs 
 |  *4+* | Possible arguments  | Optional depending on the command | 
 | Final | Checksum            | Sum of *Exclusive OR*'ing all preceding bytes in the packet |
 
