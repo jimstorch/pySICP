@@ -79,9 +79,9 @@ b'\x05\x01\x00\x06\x02'
 ```
 Five bytes?  According to the docs, this was *"Command is well executed."**
 
-So while most of the protocol versions worked on 6+ byte packets, mine wanted 5;
+So while most of the protocol versions worked on 6+ byte packets, mine wanted 5:
 
-| Byte  | Field               | Description |
+| Index | Byte Field          | Description |
 | ----  | -----               | ----------- |
 |  0    | Packet Length       | Packet Size.  This is the length of the entire packet, including this byte and the checksum  |
 |  1    | Monitor ID          | This should be the number from step 3 above. |
@@ -89,9 +89,9 @@ So while most of the protocol versions worked on 6+ byte packets, mine wanted 5;
 |  *3+* | Possible arguments  | Optional depending on the command | 
 | Final | Checksum            | Sum of *Exclusive OR*'ing all preceding bytes in the packet |
 
-For newer displays, there will be an additional **Group** field after the **Monitor ID**.
+For newer displays, there will be an additional **Group** field after the **Monitor ID**:
 
-| Byte  | Field               | Description |
+| Index | Byte Field          | Description |
 | ----  | -----               | ----------- |
 |  0    | Packet Length       | Packet Size.  This is the length of the entire packet, including this byte and the checksum  |
 |  1    | Monitor ID          | This should be the number from step 3 above. |
@@ -99,6 +99,8 @@ For newer displays, there will be an additional **Group** field after the **Moni
 |  3    | Command             | Given as hex codes in the docs 
 |  *4+* | Possible arguments  | Optional depending on the command | 
 | Final | Checksum            | Sum of *Exclusive OR*'ing all preceding bytes in the packet |
+
+**Note**: The PDFs use index 1 instead of index 0 but we're programmers here.
 
 ## Requirements
 [pySerial](https://github.com/pyserial/pyserial).  I'm using Python 3 and installed mine with;
