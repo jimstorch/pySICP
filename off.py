@@ -35,9 +35,6 @@ with serial.Serial() as ser:
         # First byte is the packet length
         # to which we add one byte for leading length byte itself
         # and another for the trailing checksum byte
-
-        # TIL: Use bytearray.append() for Integer Objects
-        #      and bytearray.extend() for Byte Objects.
         packet.append(len(data) + 2)
         packet.extend(data)
         packet.append(checksum(packet))
